@@ -13,10 +13,10 @@ You can install MultiLinearReg from GitHub using the following command in R:
 # Install the devtools package if it's not already installed
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
-
 # Install MultiLinearReg from GitHub
 devtools::install_github("yourusername/MultiLinearReg")
 Replace yourusername with your actual GitHub username.
+```
 
 Usage
 Here’s a brief introduction to using the key functions in the MultiLinearReg package:
@@ -31,6 +31,7 @@ data <- data.frame(x1 = rnorm(100), x2 = rnorm(100), y = rnorm(100))
 # Fit the model
 result <- my_multi_lm(y ~ x1 + x2, data = data)
 print(result)
+```
 
 II. Performing Diagnostics
 To perform diagnostic analysis on the fitted model:
@@ -38,3 +39,4 @@ To perform diagnostic analysis on the fitted model:
 # Diagnostics
 diagnostics <- multi_lm_diag(model_results = result)
 print(diagnostics)
+```

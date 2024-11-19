@@ -1,0 +1,72 @@
+---
+title: "HW3anaLR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{HW3anaLRe}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(HW3anaLR)
+```
+
+## Introduction
+
+This vignette demonstrates how to use the HW3anaLR package to fit multiple linear regression models and perform diagnostic analysis.
+
+## Fitting a Model
+
+You can fit a model using the my_multi_lm function:
+
+```R
+# Simulated data
+set.seed(123)
+data <- data.frame(x1 = rnorm(100), x2 = rnorm(100), y = rnorm(100))
+# Fit model
+result <- my_multi_lm(y ~ x1 + x2, data = data)
+print(result)
+```
+
+## Diagnostic Analysis
+
+After fitting the model, you can perform diagnostics to check for potential issues:
+
+```R
+# Conduct diagnostics
+diagnostics <- multi_lm_diag(model_results = result)
+print(diagnostics)
+```
+
+## Comparisons
+
+I. Correctness
+Compare the results from my_multi_lm to R’s built-in lm function to ensure correctness:
+
+```R
+lm_result <- lm(y ~ x1 + x2, data = data)
+all.equal(summary(lm_result)$coefficients, result$coefficients)
+```
+
+II. Efficiency
+Compare the efficiency of my_multi_lm against lm using the microbenchmark package:
+
+```R
+library(microbenchmark)
+benchmark <- microbenchmark(
+  my_multi_lm = my_multi_lm(y ~ x1 + x2, data = data),
+  lm = lm(y ~ x1 + x2, data = data),
+  times = 100
+)
+print(benchmark)
+```
+
+
+

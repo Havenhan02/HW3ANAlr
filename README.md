@@ -1,6 +1,6 @@
 # HW3ANAlr
  Multiple Linear Regression Package
-This R package, named HW3anaLR, provides tools for fitting multiple linear regression models and conducting diagnostic analyses. The package includes functions to compute various statistical measures and assess model diagnostics, making it an ideal choice for researchers and statisticians working with regression analysis.
+This R package, named HW3anaLR, provides tools for fitting multiple linear regression models and conducting diagnostic analyses. The package includes functions to compute various statistical measures and assess model diagnostics.
 
 **Features：**
 1. Model Fitting: Fit multiple linear regression models to your data.

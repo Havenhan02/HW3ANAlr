@@ -1,0 +1,10 @@
+Package: HW3anaLR
+Title: Statistical analysis and hypothesis testing for LR models
+Version: 0.0.0.9000
+Authors@R: 
+    person("Wenjie", "Han", email = "hanwenjie2002@gmail.com", role = c("aut", "cre"))
+Description: Detailed statistical analysis of LR models and graphical representation of tests of independence, with residual tests to help identify outliers in the data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
